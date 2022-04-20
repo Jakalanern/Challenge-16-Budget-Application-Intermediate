@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <title>Challenge #16</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inputs-container">
+        <div class="budget-input-container input-box">
+          <h2 class="budget-input-h2 input-h2">Total Budget</h2>
+          <form action="" class="budget-form">
+            <input type="number" class="budget-input input" />
+            <button class="calculate-budget-button input-button">
+              Calculate
+            </button>
+          </form>
+        </div>
+        <div class="expenses-input-container input-box">
+          <h2 class="expense-name-h2 input-h2">Expense Name</h2>
+          <form action="" class="expense-form">
+            <input
+              type="text"
+              class="expense-name-input expenses-input input"
+            />
+            <h2 class="expense-amount-h2 input-h2">Expense Amount</h2>
+            <input
+              type="number"
+              class="expense-amount-input expenses-input input"
+            />
+            <button class="add-expense-button input-button">Add Expense</button>
+          </form>
+        </div>
+      </div>
+      <div class="ui-container">
+        <div class="money-container">
+          <div class="budget-box ui-box">
+            <h2 class="ui-h2">Budget</h2>
+            <img class="icon" src="logos/money.png" alt="" />
+            <h2 class="budget-value value-h2">$0</h2>
+          </div>
+          <div class="expenses-box ui-box">
+            <h2 class="ui-h2">Expenses</h2>
+            <img class="icon" src="logos/credit-card.png" alt="" />
+            <h2 class="expense-value value-h2">$0</h2>
+          </div>
+          <div class="balance-box ui-box">
+            <h2 class="ui-h2">Balance</h2>
+            <img class="icon" src="logos/dollar-sign-black.png" alt="" />
+            <h2 class="balance-value value-h2">$0</h2>
+          </div>
+        </div>
+        <div class="list-container">
+          <h2 class="head">Expenses:</h2>
+          <div class="expense-item">
+            <div class="expense-item-h2s">
+              <h2 class="expense-item-title">Gas</h2>
+              <h2 class="expense-item-value">$35</h2>
+            </div>
+            <div class="expense-item-icons">
+              <img src="logos/edit.png" alt="" class="edit-button" />
+              <img src="logos/delete.png" alt="" class="delete-button" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- 
+<div class="list-h3s">
+          <div class="expense-titles">
+            <h3 class="expense-list-h2">Expense Title</h3>
+            <div class="expense-title expense-item">Gas</div>
+          </div>
+          <div class="expense-values">
+            <h3 class="expense-list-h2">Expense Value</h3>
+            <div class="expense-value expense-item">$35</div>
+          </div>
+          <div class="edit-or-delete">
+            <img class="edit" src="logos/edit.png" alt="">
+            <img class="delete" src="logos/delete.png" alt="">
+          </div>
+        </div>
+      </div> -->

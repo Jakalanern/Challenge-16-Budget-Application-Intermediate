@@ -1,0 +1,218 @@
+:root {
+  --clr-black: rgba(0, 0, 0, 0.774);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(247, 247, 247);
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 100%;
+  height: 100%;
+  padding: 4em;
+  background: rgb(241, 241, 241);
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  width: 33%;
+}
+
+.input-box {
+  padding: 1.5em;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.budget-input-container {
+  border: 2px solid green;
+}
+
+.expenses-input-container {
+  border: 2px solid red;
+}
+
+.input-h2 {
+  letter-spacing: 0.75px;
+  font-size: 1.33em;
+  color: var(--clr-black);
+}
+
+.expense-amount-h2 {
+  margin-top: 1em;
+}
+
+.input {
+  margin-top: 0.5em;
+  width: 100%;
+  font-size: 1.1em;
+  padding: 0.5rem 0.5rem;
+  border-radius: 2.5px;
+}
+
+.budget-input {
+  border: 1px solid green;
+}
+
+.expenses-input {
+  border: 1px solid red;
+}
+
+.expenses-input:focus {
+  outline: none;
+}
+
+.input-button {
+  margin-top: 1em;
+  padding: 0.75rem 1rem;
+  font-size: 1em;
+  background: none;
+  border-radius: 2.5px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.calculate-budget-button {
+  border: 1px solid green;
+  color: green;
+}
+
+.calculate-budget-button:hover {
+  background: green;
+  color: white;
+}
+
+.add-expense-button {
+  border: 1px solid red;
+  color: red;
+}
+
+.add-expense-button:hover {
+  background: red;
+  color: white;
+}
+
+.ui-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 67%;
+}
+
+.money-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 66%;
+}
+
+.ui-box {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.ui-box .ui-h2 {
+  color: var(--clr-black);
+}
+
+.value-h2 {
+  font-weight: 600;
+  font-size: 2.5em;
+}
+
+.budget-value {
+  color: green;
+}
+
+.expense-value {
+  color: red;
+}
+
+.balance-value {
+  color: var(--clr-black);
+}
+
+.icon {
+  width: 75px;
+}
+
+.money-container {
+  margin: 0em 2em;
+  display: flex;
+  gap: 2em;
+}
+
+.list-container {
+  margin-top: 2em;
+  width: 70%;
+  padding: 1em;
+}
+
+.list-container .head {
+  font-size: 1.75em;
+  color: var(--clr-black);
+}
+
+.expense-item {
+  display: none;
+  color: red;
+  font-weight: 600;
+  margin-top: 1em;
+  font-size: 1em;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.192);
+  padding: 0.5em;
+  border-radius: 10px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.expense-item-h2s {
+  display: flex;
+  gap: 2em;
+}
+
+.expense-item-title {
+  font-weight: 400;
+}
+
+.expense-item-value {
+  font-weight: 400;
+}
+
+.expense-item-icons {
+  display: flex;
+  gap: 1em;
+}
+
+.expense-item img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
