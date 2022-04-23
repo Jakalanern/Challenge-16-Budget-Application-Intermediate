@@ -26,7 +26,7 @@ html {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-evenly;
   width: 100%;
   height: 100%;
   padding: 4em;
@@ -36,8 +36,16 @@ html {
 .inputs-container {
   display: flex;
   flex-direction: column;
-  gap: 4em;
-  width: 33%;
+  gap: 1em;
+  min-width: 800px;
+}
+
+.inputs-container .desc {
+  text-align: center;
+  background: rgba(0, 110, 255, 0.062);
+  color: rgba(0, 0, 0, 0.589);
+  padding: 1.5em;
+  border-radius: 0.5em;
 }
 
 .input-box {
@@ -118,14 +126,14 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 67%;
+  min-width: 800px;
 }
 
 .money-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 66%;
+  width: 100%;
 }
 
 .ui-box {
@@ -215,4 +223,46 @@ html {
   width: 25px;
   height: 25px;
   cursor: pointer;
+}
+
+@media (max-width: 1650px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+  }
+  .head {
+    text-align: center;
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    gap: 1em;
+    justify-content: center;
+  }
+
+  .inputs-container {
+    min-width: 500px;
+  }
+  .ui-container {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    gap: 0em;
+    justify-content: center;
+  }
+
+  .inputs-container {
+    min-width: 375px;
+    transform: scale(0.9);
+  }
+  .ui-container {
+    min-width: 375px;
+    transform: scale(0.75);
+  }
 }

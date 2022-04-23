@@ -13,13 +13,15 @@ let expenseAmountInput = $(".expense-amount-input");
 let budgetValue = $(".budget-value");
 let balanceValue = $(".balance-value");
 let expenseValue = $(".expense-value");
+let firstDesc = $(".desc-1");
+let secondDesc = $(".desc-2");
 
 // EXPENSE ITEM STUFF
 let expenseItem = $(".expense-item");
 let expenseItemTitle = $(".expense-item-title");
 let expenseItemValue = $(".expense-item-value");
 
-//My math values
+// MY MATH VALUES
 let expenseNames = [];
 let expenses = [];
 let expense = 0;
@@ -31,26 +33,34 @@ let balance = 0;
 
 budgetForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  // BUDGET!
-  // NUMBERS ARE SET TO WHAT YOU INPUT
-  budgetValue.innerHTML = "$" + budgetInput.value;
-  // WE SAVE THE VARIABLES FROM THE NUMBERS THAT HAVE BEEN SET
-  budget = parseFloat(budgetValue.innerHTML);
-  // BALANCE!
-  // NUMBERS ARE SET TO WHAT YOU INPUT
-  balanceValue.innerHTML = "$" + budgetInput.value;
-  // WE SAVE THE VARIABLES FROM THE NUMBERS THAT HAVE BEEN SET
-  balance = parseFloat(budgetInput.value);
-  // CLEAR INPUT
-  clearInput(budgetInput);
-  budgetForm.parentElement.remove();
+  if (budgetInput.value === "") {
+    alert("Please enter a budget first!");
+  } else {
+    // BUDGET!
+    // NUMBERS ARE SET TO WHAT YOU INPUT
+    budgetValue.innerHTML = "$" + budgetInput.value;
+    // WE SAVE THE VARIABLES FROM THE NUMBERS THAT HAVE BEEN SET
+    budget = parseFloat(budgetValue.innerHTML);
+    // BALANCE!
+    // NUMBERS ARE SET TO WHAT YOU INPUT
+    balanceValue.innerHTML = "$" + budgetInput.value;
+    // WE SAVE THE VARIABLES FROM THE NUMBERS THAT HAVE BEEN SET
+    balance = parseFloat(budgetInput.value);
+    // CLEAR INPUT
+    clearInput(budgetInput);
+    firstDesc.remove();
+    budgetForm.parentElement.remove();
+    secondDesc.innerHTML = "You may continue adding any further expenses: ";
+  }
 });
 
 expenseForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  if (!expenseAmountInput.value) {
-    alert("MUST ENTER EXPENSE AMOUNT");
+  if (!expenseAmountInput.value || !expenseNameInput.value) {
+    alert("Please include an expense name and amount.");
+  } else if (balance === 0) {
+    alert("Please enter a budget first!");
   } else {
     expenseNames.push(expenseNameInput.value);
     expenses.push(parseFloat(expenseAmountInput.value));
@@ -96,10 +106,6 @@ function createExpenseItem() {
 
   let editBtns = $$(".edit-button");
   let deleteBtns = $$(".delete-button");
-
-  // editBtns.forEach(function (btn) {
-  //   btn.addEventListener("click", editItem());
-  // });
 
   editBtns.forEach(function (btn) {
     btn.addEventListener("click", getItemExpense);
@@ -157,7 +163,3 @@ function getItemExpense() {
 
   console.log(expenses);
 }
-
-// function getItemName() {
-//   deletedItemName = expenses[this.parentElement.parentElement.id];
-// }
